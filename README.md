@@ -151,8 +151,10 @@ opc-startup/
 
 ## 🛠️ 支持的工具 (Supported Tools)
 
-- **CodeBuddy**: 主要支持平台
-- 兼容其他 AI Agent 平台的 Markdown 格式技能
+- **CodeBuddy**: 主要支持平台，YAML 配置
+- **OpenClaw**: 完整兼容
+- **Hermes**: 完整兼容
+- 其他支持 YAML + Markdown 格式的 AI Agent 平台
 
 ---
 
@@ -166,8 +168,44 @@ MIT License
 
 **王辉** - 一人公司创业者，AI 工具爱好者
 
-- GitHub: [@wanghuivic](https://github.com/wanghuivic)
+- GitHub: [@dh18017588868-web](https://github.com/dh18017588868-web)
 - Blog: [方糖07](https://ft07.com)
+
+---
+
+## 🤖 支持的 AI Agent 平台 (Supported Platforms)
+
+本技能包兼容多种 AI Agent 平台的 Skill 格式：
+
+| 平台 | 格式 | 支持情况 |
+|------|------|----------|
+| **CodeBuddy** | YAML + Markdown | ✅ 完整支持 |
+| **OpenClaw** | YAML + Markdown | ✅ 完整支持 |
+| **Hermes** | YAML + Markdown | ✅ 完整支持 |
+| **其他 Claude/GPT Agent** | Markdown | ✅ 纯文本可用 |
+
+### CodeBuddy 安装
+```
+在 CodeBuddy 技能市场搜索 "opc-startup" 或 "一人公司"
+```
+
+### OpenClaw 安装
+```
+在 OpenClaw 技能市场搜索 "opc-startup"
+或从 GitHub 导入: https://github.com/dh18017588868-web/huiwang
+```
+
+### Hermes 安装
+```
+在 Hermes 技能市场搜索 "opc-startup"
+或导入 GitHub 仓库
+```
+
+### 其他平台
+```
+直接克隆仓库到本地技能目录即可使用：
+git clone https://github.com/dh18017588868-web/huiwang.git ~/.claude/skills/opc-startup
+```
 
 ---
 
