@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OPC Startup - 一人公司创业方法论
 
 > 基于全网最佳实践整合的一人公司实战体系，融合一人企业方法论 + 精益副业 + Indie Hacker 智慧
@@ -235,3 +236,7 @@ OPC (One Person Company) is not just "working alone" in the traditional sense, b
 ---
 
 **Star ⭐ 如果对你有帮助 | If this helps, please give it a star!**
+=======
+# huiwang
+HuiWang-MiniRepo
+>>>>>>> 0eb3f9651b54e262c55a137fd8b83026d9b4d865
