@@ -152,3 +152,7 @@
 - ConvertKit (@nathanbarry): $10k-$15k, PHP
 完整案例见 `references/13-master-cases.md`，版权归原作者。
 
+
+## 高级筛选
+如需按类别、收入、技术栈过滤案例，可运行：
+`python scripts/filter_cases.py --category saas --min-revenue 5000`

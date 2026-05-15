@@ -143,3 +143,6 @@ Day3: Product Hunt发布，社群宣传，监控指标。
 目标：首日10注册，首周50活跃。
 参考案例：`references/13-master-cases.md` 中 Loom。
 
+
+## 检查清单
+请使用 `templates/launch-checklist.md` 跟踪每日任务。

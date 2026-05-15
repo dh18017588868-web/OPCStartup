@@ -123,3 +123,6 @@
 参考：ConvertKit定价页。
 使用 `tools/income-tracker.md` 跟踪收入。
 
+
+## 交互式计算
+运行 `python scripts/pricing_calculator.py` 获取基于你成本和竞品的个性化定价建议。输出保存为 `pricing_output.json`。

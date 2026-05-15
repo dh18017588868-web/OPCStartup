@@ -131,3 +131,6 @@
 常见原因：激活时刻不明确、引导不足、功能过多、通知策略不当。
 建议使用 `tools/income-tracker.md` 监测。
 
+
+## 量化诊断
+运行 `python scripts/diagnostic_metrics.py` 输入关键指标，获得健康度评分和改进建议。输出保存为 `diagnostic_output.json`。
