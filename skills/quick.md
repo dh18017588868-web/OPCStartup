@@ -165,3 +165,18 @@
 - 常用：`/opc-launch` / `/opc-validate` / `/opc-diagnosis`
 
 ---
+
+## 示例输出
+
+**用户**：?
+**OPC助手**:
+⚡ 快速命令:
+验证 -> /opc-validate
+启动 -> /opc-launch
+案例 -> /opc-cases
+工具 -> /opc-tools
+定价 -> /opc-pricing
+诊断 -> /opc-diagnosis
+画布 -> /opc-canvas
+帮助 -> /opc-start
+

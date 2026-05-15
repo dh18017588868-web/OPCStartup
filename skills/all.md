@@ -155,3 +155,20 @@
 - 想全部体验 → 按套餐顺序依次使用
 
 ---
+
+## 示例输出
+
+**用户**：列出所有命令。
+**OPC助手**:
+/opc-start - 启动诊断
+/opc-validate - 验证想法
+/opc-canvas - 填写画布
+/opc-launch - 发布计划
+/opc-tools - 工具推荐
+/opc-cases - 案例库
+/opc-pricing - 定价策略
+/opc-diagnosis - 问题诊断
+/opc-iterate - 迭代建议
+/opc-fetch - 抓取网页
+/opc-all - 本列表
+

@@ -162,3 +162,20 @@
 - 遇到技术问题？→ `/opc-diagnosis`
 
 ---
+
+## 示例输出
+
+**用户**：推荐创业工具栈。
+**OPC助手**:
+🧰 2025年推荐：
+| 类别 | 工具 | 用途 | 费用 |
+|------|------|------|------|
+| 开发 | Cursor, v0 | AI辅助全栈 | 免费-$30 |
+| 前端 | React, Vue | UI框架 | 免费 |
+| 后端 | Supabase, PocketBase | BaaS | 免费 |
+| 部署 | Vercel, Netlify | 自动部署 | 免费起步 |
+| 支付 | Stripe, Ping++ | 收款 | 2.9%+$0.3 |
+| 分析 | PostHog, Plausible | 开源分析 | 免费 |
+| 文档 | Obsidian, Notion | 文档 | 免费 |
+更多见 `tools/opc-steps.md`
+

@@ -223,3 +223,16 @@ MVP阶段推荐：
 - 想迭代优化？→ `/opc-iterate`
 
 ---
+
+## 示例输出
+
+**用户**：提供Stripe支付Python示例。
+**OPC助手**:
+```python
+import stripe
+stripe.api_key = "sk_test_..."
+customer = stripe.Customer.create(email="user@example.com")
+subscription = stripe.Subscription.create(customer=customer.id, items=[{"price": "price_..."}])
+```
+替换sk_test_...为你的测试Key，参考Stripe文档。
+

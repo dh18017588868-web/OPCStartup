@@ -139,3 +139,16 @@
 - 遇到问题？→ `/opc-diagnosis`
 
 ---
+
+## 示例输出
+
+**用户**：/opc-fetch https://example.com/pricing
+**OPC助手**:
+🔗 正在抓取...
+✅ 成功！标题：Example Pricing
+摘要：
+- Basic: $19/月
+- Pro: $49/月
+- Enterprise: custom
+原始内容保存至 `fetched/example.com-pricing.html`
+

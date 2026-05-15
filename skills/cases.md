@@ -142,3 +142,13 @@
 - 遇到问题需要诊断？→ `/opc-diagnosis`
 
 ---
+
+## 示例输出
+
+**用户**：给我3个收入$5k-$10k的案例。
+**OPC助手**:
+根据案例库：
+- Remote OK (@levelsio): $5k-$8k, Ruby on Rails
+- ConvertKit (@nathanbarry): $10k-$15k, PHP
+完整案例见 `references/13-master-cases.md`，版权归原作者。
+
