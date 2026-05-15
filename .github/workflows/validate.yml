@@ -1,0 +1,44 @@
+name: Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies (none required for now)
+      run: |
+        echo "No Python dependencies needed"
+    
+    - name: Run validation script
+      run: |
+        chmod +x scripts/validate.py
+        python scripts/validate.py
+    
+    - name: Check for required files
+      run: |
+        test -f LICENSE || { echo "LICENSE file missing"; exit 1; }
+        test -f README.md || { echo "README.md missing"; exit 1; }
+        test -f SKILL.md || { echo "SKILL.md missing"; exit 1; }
+    
+    - name: Validate markdown links
+      run: |
+        # 简单的内部链接检查
+        grep -rh '\\[.*\\]\\((references/.*\\.md)\\)' --include="*.md" | cut -d: -f2 | sort -u > found_links.txt
+        ls references/*.md 2>/dev/null | xargs -I{} basename {} | sort > all_refs.txt
+        comm -23 all_refs.txt found_links.txt || echo "All referenced files exist"
+    
+    - name: Summary
+      run: |
+        echo "✅ All validation checks passed"

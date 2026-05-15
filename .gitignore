@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 项目特定
+dist/
+build/
+*.log
+*.tmp
+
+# OS
+Thumbs.db
+.DS_Store
+
+# 测试覆盖率
+.coverage
+htmlcov/
+
+# 压缩包
+*.zip
+*.tar.gz
+*.tgz
+
+# 临时文件
+*.bak
+*.orig
+
+# 自动生成
+.mypy_cache/
+.pytest_cache/

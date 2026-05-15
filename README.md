@@ -191,7 +191,7 @@ MIT License
 ### OpenClaw 安装
 ```
 在 OpenClaw 技能市场搜索 "OPC Startup"
-或从 GitHub 导入: https://github.com/dh18017588868-web/huiwang
+或从 GitHub 导入: https://github.com/dh18017588868-web/OPCStartup
 ```
 
 ### Hermes 安装
@@ -203,7 +203,7 @@ MIT License
 ### 其他平台
 ```
 直接克隆仓库到本地技能目录即可使用：
-git clone https://github.com/dh18017588868-web/huiwang.git ~/.claude/skills/OPC-Startup
+git clone https://github.com/dh18017588868-web/OPCStartup.git ~/.claude/skills/OPC-Startup
 ```
 
 ---
