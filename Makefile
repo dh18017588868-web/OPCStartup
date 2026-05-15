@@ -1,4 +1,4 @@
-.PHONY: help validate test clean package release
+.PHONY: help validate test clean package release collect
 
 .DEFAULT_GOAL := help
 
@@ -24,3 +24,7 @@ package: clean ## 创建发布包
 release: test package ## 准备发布
 	@echo "🚀 发布准备完成"
 	@echo "请确保 CHANGELOG.md 已更新，然后打 tag 并推送"
+
+collect: ## 手动运行案例收集
+	@echo "📥 运行案例收集脚本..."
+	@python scripts/collect-cases.py

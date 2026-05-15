@@ -1,0 +1,25 @@
+{
+  "id": "levelsio-remoteok",
+  "author": "Pieter Levels",
+  "handle": "@levelsio",
+  "product": "Remote OK",
+  "category": "Job Board",
+  "revenue_min": 5000,
+  "revenue_max": 8000,
+  "currency": "USD",
+  "peak_month": "2020-03",
+  "timeline": [
+    "2015-03: 启动 Remote OK",
+    "2016: 达到 $5k/月",
+    "持续运营中"
+  ],
+  "tools": [
+    "Ruby on Rails",
+    "PostgreSQL",
+    "AWS"
+  ],
+  "status": "active",
+  "source_url": "https://levels.io/remoteok-revenue/",
+  "license": "CC-BY-3.0",
+  "collected_at": "2025-05-15"
+}

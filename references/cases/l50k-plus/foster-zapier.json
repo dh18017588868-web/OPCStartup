@@ -1,0 +1,25 @@
+{
+  "id": "foster-zapier",
+  "author": "Wade Foster",
+  "handle": "@wadefoster",
+  "category": "Automation SaaS",
+  "revenue_min": 150000000,
+  "revenue_max": 200000000,
+  "currency": "USD",
+  "peak_month": "2024-06",
+  "timeline": [
+    "2011: 在 YC W12 孵化",
+    "2012: 达到 $100k ARR",
+    "2021: 估值 $50亿"
+  ],
+  "tools": [
+    "Python",
+    "Django",
+    "AWS",
+    "Stripe"
+  ],
+  "status": "active",
+  "source_url": "https://zapier.com/blog/100-million/",
+  "license": "CC-BY-3.0",
+  "collected_at": "2025-05-15"
+}

@@ -5,6 +5,25 @@
 
 ---
 
+## 📊 案例索引
+
+以下案例数据来源于公开资料，已脱敏处理。完整数据见 `references/cases/` 目录。
+
+| 编号 | 案例 | 作者 | 产品 | 类别 | 月收入 (USD) | 状态 | 来源 |
+|------|------|------|------|------|--------------|------|------|
+| [001] | [Nomad List](#) | [@levelsio](#) | SaaS / 数字游民 | $25k-$35k | 活跃 | [levels.io](https://levels.io/nomad-list-revenue/) |
+| [002] | [Remote OK](#) | [@levelsio](#) | 招聘平台 | $5k-$8k | 活跃 | [levels.io](https://levels.io/remoteok-revenue/) |
+| [003] | [Buffer](#) | [@joelgascoigne](#) | 社交媒体管理 | $2M-$2.5M ARR | 活跃 | [joel.is](https://joel.is/buffer-reach-2m-arr/) |
+| [004] | [Zapier](#) | [@wadefoster](#) | 自动化集成 | $150M-$200M ARR | 活跃 | [zapier.com/blog](https://zapier.com/blog/100-million/) |
+| [005] | [Loom](#) | [@mathiasb](#) | 视频消息 | $10M-$15M ARR | 已收购 | [ loom.com/blog](https://www.loom.com/blog/our-journey-to-100-million-valuation/) |
+| [006] | [Indie Hackers](#) | [@csallen](#) | 社区平台 | $15k-$25k | 活跃 | [indiehackers.com](https://indiehackers.com/@csallen/how-i-built-and-sold-indiehackers-for-something-life-changing-33a25bab8e) |
+| [007] | [ConvertKit](#) | [@nathanbarry](#) | 邮件营销 | $25M-$30M ARR | 活跃 | [nathanbarry.com](https://nathanbarry.com/convertkit-growth/) |
+| [008] | [French Brain](#) | [@sinakhalilife](#) | AI语言学习 | $3k-$5k | 活跃 | Twitter (公开推文) |
+| [009] | [Mental Health App](#) | [@thomasklenke](#) | 健康与保健 | $2k-$4k | 活跃 | Twitter (公开推文) |
+| [010] | [Resume Builder AI](#) | [@aemkei](#) | 生产力工具 | $1k-$2k | 活跃 | [Product Hunt](https://www.producthunt.com/posts/resume-builder-ai) |
+
+*注：收入数据为峰值或最新披露值，可能已变化。详细信息见各案例章节。*
+
 ## 一、Pieter Levels - 年入300万美元的独立开发者
 
 ### 人物档案

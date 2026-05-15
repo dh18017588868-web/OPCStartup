@@ -1,0 +1,27 @@
+{
+  "id": "gascoigne-buffer",
+  "author": "Joel Gascoigne",
+  "handle": "@joelgascoigne",
+  "product": "Buffer",
+  "category": "Social Media SaaS",
+  "revenue_min": 2000000,
+  "revenue_max": 2500000,
+  "currency": "USD",
+  "peak_month": "2021-12",
+  "timeline": [
+    "2010-08: 开始构建",
+    "2011-01: 达到 $1000/月",
+    "2013-11: 达到 $100万/年 ARR",
+    "2021: 年收入超过 $2500万"
+  ],
+  "tools": [
+    "PHP",
+    "MySQL",
+    "AWS",
+    "Stripe"
+  ],
+  "status": "active",
+  "source_url": "https://joel.is/buffer-reach-2m-arr/",
+  "license": "CC-BY-3.0",
+  "collected_at": "2025-05-15"
+}

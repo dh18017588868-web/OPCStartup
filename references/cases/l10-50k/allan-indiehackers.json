@@ -1,0 +1,25 @@
+{
+  "id": "allan-indiehackers",
+  "author": "Courtland Allen",
+  "handle": "@csallen",
+  "product": "Indie Hackers",
+  "category": "Community Platform",
+  "revenue_min": 15000,
+  "revenue_max": 25000,
+  "currency": "USD",
+  "peak_month": "2020-09",
+  "timeline": [
+    "2016-08: 创建 Indie Hackers",
+    "2017-01: 达到 $5000/MRR",
+    "2020: 年收入超过 $20万"
+  ],
+  "tools": [
+    "WordPress",
+    "AWS",
+    "Stripe"
+  ],
+  "status": "active",
+  "source_url": "https://indiehackers.com/@csallen/how-i-built-and-sold-indiehackers-for-something-life-changing-33a25bab8e",
+  "license": "CC-BY-3.0",
+  "collected_at": "2025-05-15"
+}

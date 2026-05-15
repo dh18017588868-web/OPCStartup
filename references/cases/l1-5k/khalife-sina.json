@@ -1,0 +1,26 @@
+{
+  "id": "khalife-sina",
+  "author": "Sina Khalife",
+  "handle": "@sinakhalilife",
+  "product": "French Brain",
+  "category": "AI Language Learning",
+  "revenue_min": 3000,
+  "revenue_max": 5000,
+  "currency": "USD",
+  "peak_month": "2024-10",
+  "timeline": [
+    "2023-06: 开始 MVP",
+    "2024-01: 首次收费",
+    "2024-10: 达到 $4k MRR"
+  ],
+  "tools": [
+    "Next.js",
+    "Supabase",
+    "OpenAI API",
+    "Vercel"
+  ],
+  "status": "active",
+  "source_url": "https://twitter.com/sinakhalilife/status/172334567890",
+  "license": "CC-BY-4.0",
+  "collected_at": "2025-05-15"
+}

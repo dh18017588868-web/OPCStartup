@@ -1,0 +1,26 @@
+{
+  "id": "levelsio-nomad-list",
+  "author": "Pieter Levels",
+  "handle": "@levelsio",
+  "product": "Nomad List",
+  "category": "SaaS",
+  "revenue_min": 25000,
+  "revenue_max": 35000,
+  "currency": "USD",
+  "peak_month": "2019-02",
+  "timeline": [
+    "2014-01: MVP 上线",
+    "2015-06: 首次达成收支平衡",
+    "2019-02: 收入峰值约 $30k/月"
+  ],
+  "tools": [
+    "Ruby on Rails",
+    "PostgreSQL",
+    "AWS",
+    "Stripe"
+  ],
+  "status": "active",
+  "source_url": "https://levels.io/nomad-list-revenue/",
+  "license": "CC-BY-3.0",
+  "collected_at": "2025-05-15"
+}

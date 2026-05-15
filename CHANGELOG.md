@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 添加 GitHub Actions 工作流 `.github/workflows/validate.yml`
 - 完善贡献指南 `CONTRIBUTING.md`
 - 创建本 CHANGELOG.md
+- 构建案例数据库 `references/cases/` (10个经典案例)
+- 更新 `13-master-cases.md` 包含案例索引
+- 创建案例收集脚本 `scripts/collect-cases.py` (支持 Indie Hackers RSS, Twitter API)
+- 添加定时工作流 `.github/workflows/weekly-case-collection.yml` (每周一自动运行)
 
 ### Fixed
 - 统一 `skills/quick.md` 结构，添加 "工作流程" 部分
@@ -20,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - 优化项目结构，确保 16 个技能文件完整
+- 案例数据采用 JSONL 格式存储，支持自动化更新
 
 ---
 

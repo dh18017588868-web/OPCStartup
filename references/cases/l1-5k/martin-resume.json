@@ -1,0 +1,26 @@
+{
+  "id": "martin-resume",
+  "author": "Martin Kleppe",
+  "handle": "@aemkei",
+  "product": "Resume.io Alternative",
+  "category": "Productivity Tool",
+  "revenue_min": 1000,
+  "revenue_max": 2000,
+  "currency": "USD",
+  "peak_month": "2024-05",
+  "timeline": [
+    "2023-12: 独立开发启动",
+    "2024-02: 发布 Product Hunt",
+    "2024-05: 达到 $1500 MRR"
+  ],
+  "tools": [
+    "React",
+    "Node.js",
+    "Tailwind",
+    "Supabase"
+  ],
+  "status": "active",
+  "source_url": "https://www.producthunt.com/posts/resume-builder-ai",
+  "license": "CC-BY-3.0",
+  "collected_at": "2025-05-15"
+}

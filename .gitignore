@@ -36,6 +36,10 @@ htmlcov/
 # 临时文件
 *.bak
 *.orig
+*.log
+
+# 案例收集日志
+references/cases/collection.log
 
 # 自动生成
 .mypy_cache/

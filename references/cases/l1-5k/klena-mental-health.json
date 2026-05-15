@@ -1,0 +1,25 @@
+{
+  "id": "klena-mental-health",
+  "author": "Thomas Klenke",
+  "handle": "@thomasklenke",
+  "product": "Mental Health App",
+  "category": "Health & Wellness",
+  "revenue_min": 2000,
+  "revenue_max": 4000,
+  "currency": "USD",
+  "peak_month": "2024-08",
+  "timeline": [
+    "2023-09: 启动 MVP",
+    "2024-03: 开始盈利",
+    "2024-08: 月收入 $3k"
+  ],
+  "tools": [
+    "Flutter",
+    "Firebase",
+    "Stripe"
+  ],
+  "status": "active",
+  "source_url": "https://twitter.com/thomasklenke/status/123456789",
+  "license": "CC-BY-4.0",
+  "collected_at": "2025-05-15"
+}

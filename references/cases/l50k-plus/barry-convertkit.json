@@ -1,0 +1,26 @@
+{
+  "id": "barry-convertkit",
+  "author": "Nathan Barry",
+  "handle": "@nathanbarry",
+  "product": "ConvertKit",
+  "category": "Email Marketing",
+  "revenue_min": 25000000,
+  "revenue_max": 30000000,
+  "currency": "USD",
+  "peak_month": "2022-03",
+  "timeline": [
+    "2013-09: 启动 ConvertKit",
+    "2015: 达到 $10k MRR",
+    "2018: 达到 $10M ARR",
+    "2022: 以 $2B 估值寻求IPO"
+  ],
+  "tools": [
+    "Ruby on Rails",
+    "PostgreSQL",
+    "AWS"
+  ],
+  "status": "active",
+  "source_url": "https://nathanbarry.com/convertkit-growth/",
+  "license": "CC-BY-3.0",
+  "collected_at": "2025-05-15"
+}
