@@ -168,7 +168,6 @@ MIT License
 **王辉** - 一人公司创业者，AI 工具爱好者
 
 - GitHub: [@dh18017588868-web](https://github.com/dh18017588868-web)
-- Blog: [方糖07](https://ft07.com)
 
 ---
 
