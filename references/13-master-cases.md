@@ -9,8 +9,8 @@
 
 以下案例数据来源于公开资料，已脱敏处理。完整数据见 `references/cases/` 目录。
 
-| 编号 | 案例 | 作者 | 产品 | 类别 | 月收入 (USD) | 状态 | 来源 |
-|------|------|------|------|------|--------------|------|------|
+| 编号 | 案例 | 作者 | 类别 | 月收入 (USD) | 状态 | 来源 |
+|------|------|------|--------------|------|------|------|
 | [001] | [Nomad List](#) | [@levelsio](#) | SaaS / 数字游民 | $25k-$35k | 活跃 | [levels.io](https://levels.io/nomad-list-revenue/) |
 | [002] | [Remote OK](#) | [@levelsio](#) | 招聘平台 | $5k-$8k | 活跃 | [levels.io](https://levels.io/remoteok-revenue/) |
 | [003] | [Buffer](#) | [@joelgascoigne](#) | 社交媒体管理 | $2M-$2.5M ARR | 活跃 | [joel.is](https://joel.is/buffer-reach-2m-arr/) |
