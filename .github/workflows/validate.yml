@@ -9,6 +9,8 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read  # 仅需要读取仓库内容进行验证
     steps:
     - uses: actions/checkout@v4
     
