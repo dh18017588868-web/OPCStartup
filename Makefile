@@ -1,4 +1,4 @@
-.PHONY: help validate test clean package release collect
+.PHONY: help validate test clean package release collect install-deps
 
 .DEFAULT_GOAL := help
 
@@ -9,7 +9,9 @@ help: ## 显示帮助
 validate: ## 运行项目验证
 	@python scripts/validate.py
 
-test: validate ## 运行所有测试
+install-deps: ## 安装开发依赖
+	@python -m pip install -r requirements.txt
+test: validate pytest ## 运行所有测试
 
 clean: ## 清理临时文件
 	@find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true

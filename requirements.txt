@@ -1,0 +1,6 @@
+# Development dependencies
+pytest>=7.0.0
+
+# Optional: markdownlint for CI linting (can be added later)
+# markdownlint-cli>=0.35.0
+# codespell>=2.2.0
