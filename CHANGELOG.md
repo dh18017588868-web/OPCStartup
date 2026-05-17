@@ -49,3 +49,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 *This changelog is maintained manually. Please update it when merging PRs.*
+
+### Added
+- Add `/opc-run` one-click startup skill
+- Enhance test coverage
+- Fix table consistency
+- Improve CI

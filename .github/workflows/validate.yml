@@ -39,6 +39,8 @@ jobs:
         ls references/*.md 2>/dev/null | xargs -I{} basename {} | sort > all_refs.txt
         comm -23 all_refs.txt found_links.txt || echo "All referenced files exist"
     
+    - name: Run unit tests
+      run: pytest -v
     - name: Summary
       run: |
         echo "✅ All validation checks passed"

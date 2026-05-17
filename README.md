@@ -272,3 +272,6 @@ OPC (One Person Company) is not just "working alone" in the traditional sense, b
 ---
 
 **Star ⭐ 如果对你有帮助 | If this helps, please give it a star!**
+
+## Features
+- **One-Click Startup** (`/opc-run`): Interactive 7-step wizard to generate a complete startup plan.
