@@ -1,0 +1,52 @@
+name: Feature Request
+description: Suggest an idea for this project
+title: "[FEATURE] "
+labels: enhancement
+body:
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      description: |
+        Please ensure you've completed the following before submitting:
+      options:
+        - label: I have searched existing feature requests
+          required: true
+        - label: This feature aligns with the project's scope (one-person startup methodology)
+          required: true
+  - type: textarea
+    attributes:
+      label: Problem Statement
+      description: |
+        What problem does this feature solve? Who benefits?
+      placeholder: |
+        As a one-person founder, I want to...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Proposed Solution
+      description: |
+        Describe the solution you'd like. Include UI/command examples if applicable.
+      placeholder: |
+        A clear description of the feature...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Alternatives Considered
+      description: |
+        What other solutions have you considered?
+      placeholder: |
+        - Alternative 1...
+        - Alternative 2...
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Additional Context
+      description: |
+        Screenshots, mockups, references to similar features in other tools.
+      placeholder: |
+        Add any other context here.
+    validations:
+      required: false

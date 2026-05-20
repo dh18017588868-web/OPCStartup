@@ -29,6 +29,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 案例数据采用 JSONL 格式存储，支持自动化更新
 
 ## [Unreleased]
+## [Unreleased]
+
+### Added
+- Comprehensive test suite (unit, integration, trigger validation)
+- GitHub Actions platform compatibility workflow
+- MkDocs documentation site with `make docs` target
+- Internationalization: English skill files (.en.md) and EN triggers
+- Performance optimizations: caching and parallel validation
+- CODE OF CONDUCT and contribution guidelines
+- Competitor analysis template and annual report generator
+- Documentation badges in README
+
+### Changed
+- Updated Makefile with docs targets
+- Enhanced .gitignore with sensitive file patterns
+
+### Fixed
+- Various minor bugs and formatting issues
+
 
 ---
 

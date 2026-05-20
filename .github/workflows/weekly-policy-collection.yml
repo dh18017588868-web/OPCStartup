@@ -1,0 +1,53 @@
+name: Weekly Policy Collection
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 每周一 00:00 UTC
+  workflow_dispatch:     # 允许手动触发
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install feedparser requests beautifulsoup4
+
+    - name: Run policy collector
+      run: |
+        python scripts/collect-policies.py
+
+    - name: Validate policy data
+      run: |
+        python scripts/validate-policies.py
+
+    - name: Check for changes
+      id: changes
+      run: |
+        if git diff --quiet references/policies/; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Commit and push changes
+      if: steps.changes.outputs.changed == 'true'
+      run: |
+        git config user.name "Hermes Agent"
+        git config user.email "hermes-agent@noreply.github.com"
+        git add references/policies/
+        git commit -m "chore: automated policy collection (weekly)"
+        git push origin HEAD:${{ github.ref }}

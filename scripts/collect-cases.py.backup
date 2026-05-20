@@ -19,20 +19,6 @@ except ImportError:
     print("⚠️  可选依赖 feedparser 未安装，Indie Hackers RSS 功能将禁用")
     feedparser = None
 
-# AI 分类依赖
-try:
-    import openai
-    OPENAI_AVAILABLE = True
-except ImportError:
-    OPENAI_AVAILABLE = False
-
-try:
-    from sentence_transformers import SentenceTransformer
-    SENTENCE_TRANSFORMER_AVAILABLE = True
-except ImportError:
-    SENTENCE_TRANSFORMER_AVAILABLE = False
-
-
 try:
     import requests
 except ImportError:
@@ -63,13 +49,6 @@ def load_existing_cases():
     return existing_ids
 
 def save_case(case_data):
-    # AI 分类增强
-    if 'ai_classified' not in case_data:
-        classifier = AICaseClassifier()
-        case_data = classifier.classify_case(case_data)
-        case_data['ai_classified'] = True
-    
-
     """保存单个案例到索引文件和分类文件"""
     # 写入索引
     with open(INDEX_FILE, "a", encoding="utf-8") as f:
@@ -121,150 +100,6 @@ def extract_revenue_from_text(text):
         # 返回最小和最大值（允许范围）
         return min(revenues), max(revenues)
     return None, None
-
-
-
-class AICaseClassifier:
-    """AI 驱动的案例自动分类器"""
-    
-    def __init__(self, api_key=None, model="gpt-4o-mini", use_local=False):
-        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
-        self.model = model
-        self.use_local = use_local
-        self.openai_client = None
-        self.embedding_model = None
-        
-        if not use_local and not self.api_key:
-            log("⚠️  OPENAI_API_KEY 未设置，AI 分类将被禁用")
-            self.enabled = False
-        else:
-            self.enabled = True
-            if not use_local:
-                try:
-                    import openai
-                    openai.api_key = self.api_key
-                    self.openai_client = openai.OpenAI(api_key=self.api_key)
-                    log(f"✅ AI 分类器已初始化 (模型: {model})")
-                except Exception as e:
-                    log(f"⚠️  OpenAI 初始化失败: {e}")
-                    self.enabled = False
-            else:
-                if SENTENCE_TRANSFORMER_AVAILABLE:
-                    try:
-                        from sentence_transformers import SentenceTransformer
-                        self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
-                        log("✅ 本地 embedding 模型已加载")
-                    except Exception as e:
-                        log(f"⚠️  本地模型加载失败: {e}")
-                        self.enabled = False
-                else:
-                    log("⚠️  sentence-transformers 未安装，本地模式不可用")
-                    self.enabled = False
-    
-    def classify_case(self, case_data):
-        """对单个案例进行 AI 分类"""
-        if not self.enabled:
-            return case_data
-        
-        try:
-            title = case_data.get('product', '')
-            summary = case_data.get('summary', '')
-            
-            # 使用 LLM 进行分类
-            prompt = self._build_classification_prompt(case_data)
-            response = self.openai_client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": self._system_prompt()},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.3,
-                max_tokens=500
-            )
-            
-            result = response.choices[0].message.content
-            parsed = self._parse_ai_result(result)
-            
-            # 更新案例数据
-            case_data.update(parsed)
-            
-            # 生成英文摘要
-            case_data['summary_en'] = self._generate_english_summary(title, summary)
-            
-            log(f"🤖 AI 分类完成: {title[:50]}...")
-            return case_data
-            
-        except Exception as e:
-            log(f"AI 分类失败: {str(e)}")
-            return case_data
-    
-    def _build_classification_prompt(self, case_data):
-        prompt = f"""
-请分析以下独立开发者案例，并返回 JSON 格式的分类结果。
-
-## 案例信息
-标题: {case_data.get('product', 'N/A')}
-描述: {case_data.get('summary', 'N/A')}
-收入范围: ${case_data.get('revenue_min', 0):,} - ${case_data.get('revenue_max', 0):,} /月
-来源: {case_data.get('source_platform', 'Unknown')}
-
-请分析并返回以下字段:
-1. revenue_tier: 收入层级 (L0, L1, L2, L3, L4, L5)
-   - L0: < $1k/月
-   - L1: $1k-5k/月
-   - L2: $5k-10k/月
-   - L3: $10k-50k/月
-   - L4: $50k-100k/月
-   - L5: > $100k/月
-2. category: 主要赛道 (SaaS、工具、信息产品、社区、市场/交易平台、教育、其他)
-3. value_prop: 核心价值主张 (自动化、效率提升、教育、连接、娱乐、工具简化)
-4. tools_used: 主要技术栈/工具 (逗号分隔)
-5. quality_score: 质量评分 0-100 (基于描述详细度、收入确定性、来源可信度)
-6. tags: 5-8 个关键词标签 (逗号分隔)
-
-返回格式 (纯 JSON):
-{{
-  "revenue_tier": "L2",
-  "category": "SaaS",
-  "value_prop": "自动化",
-  "tools_used": "Python, FastAPI, PostgreSQL",
-  "quality_score": 85,
-  "tags": ["自动化", "SaaS", "开发者工具"]
-}}
-"""
-        return prompt.strip()
-    
-    def _system_prompt(self):
-        return "你是一个专业的独立开发者案例分析助手，擅长从简短描述中提取结构化信息。"
-    
-    def _parse_ai_result(self, text):
-        """解析 AI 返回的 JSON"""
-        try:
-            import re, json
-            json_match = re.search(r'\{.*\}', text, re.DOTALL)
-            if json_match:
-                data = json.loads(json_match.group())
-                return data
-            return {}
-        except:
-            return {}
-    
-    def _generate_english_summary(self, title, summary):
-        """生成英文摘要"""
-        if not summary:
-            return title[:200]
-        return summary if any(c.isascii() for c in summary) else f"AI product: {title}"
-    
-    def compute_semantic_hash(self, text):
-        """计算语义 hash (简化版)"""
-        if not self.enabled or not self.embedding_model:
-            return None
-        try:
-            embedding = self.embedding_model.encode(text[:500])
-            return hash(tuple((embedding * 100).astype(int).tolist()))
-        except:
-            return None
-
 
 def collect_from_indiehackers():
     """从 Indie Hackers RSS 抓取新案例"""
@@ -434,17 +269,9 @@ def main():
     
     # 保存所有新案例
     for case in all_new:
-        # AI 分类 (每个案例)
-        classifier = AICaseClassifier()
-        case = classifier.classify_case(case)
-
         save_case(case)
     
-    if 'classifier' in locals() and classifier.enabled:
-        ai_classified = sum(1 for c in all_new if c.get('ai_classified'))
-        log(f"完成！收集 {len(all_new)} 个新案例，AI 分类 {ai_classified} 个")
-    else:
-        log(f"完成！共收集 {len(all_new)} 个新案例")
+    log(f"完成！共收集 {len(all_new)} 个新案例")
     
     if all_new:
         # 输出统计

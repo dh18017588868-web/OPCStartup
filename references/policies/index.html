@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>政策信息 - OPC Startup</title>
+<style>
+  body { font-family: sans-serif; margin: 20px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+  th { background-color: #f2f2f2; }
+  .filter { margin-bottom: 20px; }
+  .filter input, .filter select { margin-right: 10px; padding: 5px; }
+</style>
+</head>
+<body>
+<h1>OPC Startup 政策信息</h1>
+<div class="filter">
+  <input type="text" id="searchInput" placeholder="搜索标题、来源、摘要...">
+  <select id="regionSelect">
+    <option value="">全部地区</option>
+    <option value="national">国家</option>
+    <option value="shanghai">上海</option>
+    <option value="zhejiang">浙江</option>
+    <option value="jiangsu">江苏</option>
+  </select>
+  <select id="typeSelect">
+    <option value="">全部类型</option>
+    <option value="government">政府发文</option>
+    <option value="subsidies">公司补贴</option>
+    <option value="park-construction">园区建设</option>
+  </select>
+</div>
+<table id="policyTable">
+  <thead>
+    <tr>
+      <th>标题</th>
+      <th>来源</th>
+      <th>类型</th>
+      <th>地区</th>
+      <th>发布日期</th>
+      <th>摘要</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<script>
+async function loadPolicies() {
+  try {
+    const response = await fetch('index.jsonl');
+    if (!response.ok) throw new Error('Network response was not ok');
+    const text = await response.text();
+    const lines = text.trim().split('\n').filter(l => l);
+    const policies = lines.map(line => JSON.parse(line));
+    const regionMap = { national: '国家', shanghai: '上海', zhejiang: '浙江', jiangsu: '江苏' };
+    const typeMap = { government: '政府发文', subsidies: '公司补贴', 'park-construction': '园区建设' };
+    renderPolicies(policies);
+    document.getElementById('searchInput').addEventListener('input', () => renderPolicies(policies));
+    document.getElementById('regionSelect').addEventListener('change', () => renderPolicies(policies));
+    document.getElementById('typeSelect').addEventListener('change', () => renderPolicies(policies));
+    function renderPolicies(data) {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const region = document.getElementById('regionSelect').value;
+      const type = document.getElementById('typeSelect').value;
+      const filtered = data.filter(p => {
+        const matchSearch = p.title.toLowerCase().includes(search) || p.source.toLowerCase().includes(search) || p.summary.toLowerCase().includes(search);
+        const matchRegion = region ? p.region === region : true;
+        const matchType = type ? p.type === type : true;
+        return matchSearch && matchRegion && matchType;
+      });
+      const tbody = document.querySelector('#policyTable tbody');
+      tbody.innerHTML = '';
+      filtered.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><a href="${p.link}" target="_blank">${p.title}</a></td>
+          <td>${p.source}</td>
+          <td>${typeMap[p.type] || p.type}</td>
+          <td>${regionMap[p.region] || p.region}</td>
+          <td>${p.date}</td>
+          <td>${p.summary}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+      if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6">无匹配数据</td></tr>';
+      }
+    }
+  } catch (error) {
+    document.getElementById('policyTable').innerHTML = '<tr><td colspan="6">加载数据失败: ' + error.message + '</td></tr>';
+  }
+}
+loadPolicies();
+</script>
+</body>
+</html>

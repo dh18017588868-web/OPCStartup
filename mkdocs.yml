@@ -1,0 +1,85 @@
+site_name: OPC Startup Documentation
+site_description: 一人公司创业方法论 - AI辅助技能包
+site_author: Wang Hui
+repo_url: https://github.com/dh18017588868-web/OPCStartup
+repo_name: dh18017588868-web/OPCStartup
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - 主页: index.md
+  - 快速开始: quick-start.md
+  - 技能参考:
+    - 概述: skills/index.md
+    - 快速启动: skills/start.md
+    - 想法验证: skills/validate.md
+    - MVP 设计: skills/mvp.md
+    - 画布工具: skills/canvas.md
+    - 定价指导: skills/pricing.md
+    - 决策诊断: skills/review.md
+    - 72小时启动: skills/launch.md
+    - 问题诊断: skills/diagnosis.md
+    - 工具推荐: skills/tools.md
+    - 案例查询: skills/cases.md
+    - 文档拉取: skills/fetch.md
+    - 全家桶: skills/all.md
+    - 代码开发: skills/code.md
+    - 快捷命令: skills/quick.md
+    - 迭代优化: skills/iterate.md
+    - 一键生成: skills/generate.md
+  - 参考文档:
+    - references/00-our-methodology.md
+    - references/01-opb-canvas.md
+    - references/02-business-model.md
+    - references/03-case-database.md
+    - references/04-validation-sop.md
+    - references/06-infrastructure.md
+    - references/07-mvp-validation.md
+    - references/09-operations-infrastructure.md
+    - references/12-real-cases.md
+    - references/13-master-cases.md
+    - references/14-rapid-startup.md
+    - references/15-automation-ops.md
+  - 工具:
+    - tools/opc-steps.md
+    - tools/income-tracker.md
+    - tools/startup-checklist.md
+  - 开发指南:
+    - contributing.md
+    - testing.md
+    - changelog.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.details
+  - meta
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: timeago
+  - minify:
+      minify_html: true
+
+# 自定义目录结构
+docs_dir: docs

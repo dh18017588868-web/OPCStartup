@@ -1,40 +1,36 @@
-## 变更描述
+## Description
 
-请描述这次 PR 做了什么：
+[Provide a brief description of the changes]
 
-- [ ] 新功能 (Feature)
-- [ ] Bug 修复 (Fix)
-- [ ] 文档改进 (Docs)
-- [ ] 重构 (Refactor)
-- [ ] 其他
+## Type of Change
 
-## 变更内容
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Documentation update
 
-详细说明：
+## Checklist
 
-1. **主要更改**
-   - ...
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my own code
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] New and existing unit tests pass locally (`pytest -v`)
+- [ ] I have updated the documentation accordingly (`docs/` and `README.md`)
+- [ ] My changes generate no new warnings (`flake8`)
+- [ ] I have run `python scripts/validate.py` with no errors
+- [ ] My commits follow [Conventional Commits](https://www.conventionalcommits.org/)
+- [ ] I have added an entry to `CHANGELOG.md` under [Unreleased] (if applicable)
 
-2. **相关文件**
-   - ...
+## Related Issues
 
-## 测试
+List any issues that this PR addresses (use `Closes #123` syntax if applicable):
 
-请描述如何测试这次更改：
+- Closes #
 
-- [ ] 已运行 `make validate` 并通过
-- [ ] 已手动测试相关技能功能
-- [ ] 已更新文档 (如需要)
-- [ ] 已更新 CHANGELOG.md
+## Screenshots / Documentation
 
-## 关联 Issue
+If applicable, add screenshots or documentation snippets to help reviewers.
 
-Closes # (issue 编号)
+## Additional Notes
 
-## 额外信息
-
-任何额外信息截图、日志等。
-
----
-
-**注意：** 确保你的分支基于最新的 `main`，并且所有检查通过。
+Add any additional context or notes for reviewers here.
