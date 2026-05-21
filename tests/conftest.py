@@ -5,7 +5,6 @@ Pytest 配置和共享 fixtures
 import pytest
 import os
 from pathlib import Path
-from hermes_tools import read_file, search_files, terminal
 
 PROJECT_ROOT = Path(os.getenv("PROJECT_ROOT", "/home/ubuntu/hermes/projects/OPCStartup")).resolve()
 
