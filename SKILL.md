@@ -1,6 +1,7 @@
 ---
 name: OPC Startup
 version: 1.0.2
+category: devops
 description: "一人公司创业方法论：基于全网最佳实践整合的一人公司实战体系，融合一人企业方法论+精益副业+Indie Hacker智慧。包含17个核心Skill：快速启动、想法验证、MVP设计、画布填写、定价指导、决策诊断、72小时启动、问题诊断、工具推荐、案例查询、文档拉取、全家桶入口、代码开发、快捷命令、迭代优化、一键生成、全流程自动化启动。"
 author: "王辉 (https://github.com/dh18017588868-web)"
 triggers:

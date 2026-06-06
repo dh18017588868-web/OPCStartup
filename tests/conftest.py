@@ -1,12 +1,17 @@
-"""
-Pytest 配置和共享 fixtures
-"""
+"""Pytest 配置和共享 fixtures"""
 
 import pytest
 import os
+import sys
 from pathlib import Path
 
+# Determine project root
 PROJECT_ROOT = Path(os.getenv("PROJECT_ROOT", "/home/ubuntu/hermes/projects/OPCStartup")).resolve()
+
+# Add scripts directory to Python path for direct imports (fix CI import error)
+scripts_path = PROJECT_ROOT / "scripts"
+if str(scripts_path) not in sys.path:
+    sys.path.insert(0, str(scripts_path))
 
 
 @pytest.fixture
@@ -45,7 +50,5 @@ def temp_project(tmp_path, project_root):
 @pytest.fixture
 def validator_class():
     """导入 OPCValidator 类"""
-    import sys
-    sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
     from validate import OPCValidator
     return OPCValidator
