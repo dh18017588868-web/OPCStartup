@@ -54,6 +54,30 @@ triggers:
 
 ---
 
+## 触发器映射
+
+| 触发器 | 技能文件 | 描述 |
+|--------|----------|------|
+| `/opc-start` | start.md | 快速启动引导，走完创业七步 |
+| `/opc-validate` | validate.md | 想法验证，24小时验证市场需求 |
+| `/opc-mvp` | mvp.md | MVP产品设计 |
+| `/opc-canvas` | canvas.md | 一人企业画布填写 |
+| `/opc-pricing` | pricing.md | 产品定价指导 |
+| `/opc-review` | review.md | 决策诊断，极简检验决策 |
+| `/opc-launch` | launch.md | 72小时快速启动 |
+| `/opc-diagnosis` | diagnosis.md | 问题诊断与解决 |
+| `/opc-tools` | tools.md | 工具推荐，按场景 |
+| `/opc-cases` | cases.md | 案例查询，对标参考 |
+| `/opc-fetch` | fetch.md | 文档拉取，最新资讯 |
+| `/opc-code` | code.md | 代码开发，MVP构建 |
+| `/opc-generate` | generate.md | 一键生成，内容创作 |
+| `/opc-iterate` | iterate.md | 迭代优化，持续改进 |
+| `/opc-all` | all.md | 全家桶入口，一键调用所有技能 |
+| `/opc-quick` | quick.md | 快捷命令，模糊匹配 |
+| `/opc-run` | run.md | 一键调用所有能力，全流程自动化 |
+| `/opc-policy` | policy.md | 政策信息收集 |
+| `/opc-policy.en` | policy.en.md | 政策信息收集（英文版） |
+
 ## 方法论来源
 
 | 项目 | Stars | 贡献 |

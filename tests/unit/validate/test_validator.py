@@ -50,7 +50,7 @@ class TestOPCValidator:
 
         validator = OPCValidator(project_root)
         validator.check_license()
-        assert "MIT" in (license_file.read_text(encoding='utf-8').lower())
+        assert "mit" in (license_file.read_text(encoding='utf-8').lower())
         assert validator.errors == 0
         assert validator.passed >= 1
 

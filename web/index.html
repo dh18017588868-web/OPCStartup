@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>OPC Startup 快速启动</title>
+<style>
+  body {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; background: #f8f9fa; color: #333;}
+  h1 {color: #2c3e50; margin-bottom: 10px;}
+  .subtitle {color: #7f8c8d; margin-bottom: 30px;}
+  .question {margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);}
+  .options label {display: block; margin: 8px 0; cursor: pointer;}
+  button {padding: 12px 24px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;}
+  button:hover {background: #2980b9;}
+  #result {margin-top: 20px; padding: 15px; border: 1px solid #ddd; background: #fff; white-space: pre-wrap; display: none; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);}
+  .footer {margin-top: 40px; font-size: 0.9em; color: #7f8c8d; text-align: center;}
+</style>
+</head>
+<body>
+<h1>OPC Startup 快速启动</h1>
+<p class="subtitle">通过三个简单问题，立即获得你的创业方向建议。</p>
+
+<div class="question">
+  <p><strong>1. 你目前的状态是什么？</strong></p>
+  <div class="options">
+    <label><input type="radio" name="q1" value="A"> A. 有稳定工作，想找副业</label>
+    <label><input type="radio" name="q1" value="B"> B. 已经在做副业，想规模化</label>
+    <label><input type="radio" name="q1" value="C"> C. 全部时间创业</label>
+  </div>
+</div>
+
+<div class="question">
+  <p><strong>2. 你擅长什么？或有什么积累？</strong></p>
+  <div class="options">
+    <label><input type="radio" name="q2" value="A"> A. 技术开发能力</label>
+    <label><input type="radio" name="q2" value="B"> B. 内容创作能力</label>
+    <label><input type="radio" name="q2" value="C"> C. 行业专业知识</label>
+    <label><input type="radio" name="q2" value="D"> D. 产品设计能力</label>
+    <label><input type="radio" name="q2" value="E"> E. 销售运营能力</label>
+  </div>
+</div>
+
+<div class="question">
+  <p><strong>3. 你想做什么方向的创业？</strong></p>
+  <div class="options">
+    <label><input type="radio" name="q3" value="A"> A. AI工具/软件产品</label>
+    <label><input type="radio" name="q3" value="B"> B. 内容创业/知识付费</label>
+    <label><input type="radio" name="q3" value="C"> C. 咨询服务/专业服务</label>
+    <label><input type="radio" name="q3" value="D"> D. 电商/实物产品</label>
+    <label><input type="radio" name="q3" value="E"> E. 还不确定</label>
+  </div>
+</div>
+
+<button id="submitBtn">获取建议</button>
+
+<div id="result"></div>
+
+<div class="footer">
+  此页面为 OPC Startup 的简化演示，完整功能请安装相应 skill。
+</div>
+
+<script>
+document.getElementById('submitBtn').addEventListener('click', function() {
+  const q1 = document.querySelector('input[name="q1"]:checked');
+  const q2 = document.querySelector('input[name="q2"]:checked');
+  const q3 = document.querySelector('input[name="q3"]:checked');
+  if (!q1 || !q2 || !q3) {
+    alert('请回答所有三个问题');
+    return;
+  }
+  // 这里我们直接显示示例输出，实际 skill 会根据用户输入生成定制回复
+  const exampleOutput = `**用户**：我想创业，但不知道从哪里开始。
+
+**OPC助手**：
+📌 我需要了解你的基本情况，请回答以下三个问题（回复选项即可）：
+
+**问题1：你目前的状态是？**  
+A. 有稳定工作，想找副业  
+B. 已经在做副业，想规模化  
+C. 全部时间创业  
+
+**问题2：你擅长什么？**  
+A. 技术开发  
+B. 内容创作  
+C. 行业专业知识  
+D. 产品设计  
+E. 销售运营  
+
+**问题3：你倾向的创业方向？**  
+A. AI工具/软件产品  
+B. 内容创业/知识付费  
+C. 咨询服务/专业服务  
+D. 电商/实物产品  
+E. 还不确定  
+
+请按格式回复：\`1A 2B 3A\``;
+
+  const resultDiv = document.getElementById('result');
+  resultDiv.innerHTML = '<pre style="white-space: pre-wrap; font-family: inherit;">' + exampleOutput + '</pre>';
+  resultDiv.style.display = 'block';
+  resultDiv.scrollIntoView({behavior: 'smooth'});
+});
+</script>
+</body>
+</html>

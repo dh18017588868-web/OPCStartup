@@ -82,6 +82,7 @@ Hour 13-24: 判断是否继续
 - 创业七步法完整版：`tools/opc-steps.md`
 - 案例参考：`references/13-master-cases.md`
 - 快速启动：`references/14-rapid-startup.md`
+- Web 试用界面：`web/index.html`
 
 ---
 

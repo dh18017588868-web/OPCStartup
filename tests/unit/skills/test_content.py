@@ -35,24 +35,36 @@ class TestSkillsContent:
             assert len(content.strip()) > 0, f"技能文件为空: {skill}"
 
     def test_skill_has_frontmatter(self, skills_dir):
-        """测试 skill 文件有 frontmatter 分隔符"""
+        """测试 skill 文件不应包含 YAML frontmatter（元数据集中在 SKILL.md）"""
         for skill in self.REQUIRED_SKILLS:
             path = skills_dir / skill
             content = path.read_text(encoding='utf-8')
-            # 检查是否有 --- 分隔符（YAML frontmatter）
-            assert '---' in content[:100], f"{skill} 应包含 YAML frontmatter 分隔符"
+            # 检查前100字符是否包含 --- 分隔符
+            assert '---' not in content[:100], f"{skill} 不应包含 YAML frontmatter 分隔符"
 
     def test_skill_has_description(self, skills_dir):
-        """测试 skill 文件有描述信息"""
+        """测试每个必需技能都在 SKILL.md 表格中有描述"""
+        import re
+        project_root = skills_dir.parent
+        skill_md_path = project_root / "SKILL.md"
+        assert skill_md_path.exists(), "SKILL.md 不存在"
+        md_content = skill_md_path.read_text(encoding='utf-8')
+        # 寻找三列表格：触发器 | 技能文件 | 描述
+        table_match = re.search(r'\|\s*触发器\s*\|\s*技能文件\s*\|\s*描述\s*\|.*?\n\|[-| ]+\|\n((?:\|.*\|\n)+)', md_content, re.DOTALL)
+        assert table_match, "SKILL.md 中未找到技能映射表格"
+        table_text = table_match.group(1)
+        skill_desc = {}
+        for line in table_text.strip().split('\n'):
+            cells = [c.strip() for c in line.split('|')]
+            if len(cells) >= 4:
+                skill_file = cells[2].strip()
+                description = cells[3].strip()
+                if skill_file:
+                    skill_desc[skill_file] = description
+        # 交集：检查 REQUIRED_SKILLS 中的每个技能是否都有描述
         for skill in self.REQUIRED_SKILLS:
-            path = skills_dir / skill
-            content = path.read_text(encoding='utf-8')
-            # YAML frontmatter 后应该有描述
-            import re
-            match = re.search(r'---\n(.*?)\n---', content, re.DOTALL)
-            if match:
-                frontmatter = match.group(1)
-                assert 'description:' in frontmatter, f"{skill} frontmatter 中应有 description"
+            assert skill in skill_desc, f"SKILL.md 中缺少技能文件: {skill}"
+            assert skill_desc[skill], f"SKILL.md 中 {skill} 的描述缺失"
 
     def test_quick_skill_structure(self, skills_dir):
         """测试 quick.md 的结构完整性"""

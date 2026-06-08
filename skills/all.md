@@ -176,4 +176,25 @@
 /opc-iterate - 迭代建议
 /opc-fetch - 抓取网页
 /opc-all - 本列表
+/opc-run - 一键调用所有能力
 
+
+- `policy` - 政策信息收集
+- `generate.en` - 一键生成（英文版）
+- `start.en` - 快速启动（英文版）
+- `validate.en` - 想法验证（英文版）
+- `mvp.en` - MVP设计（英文版）
+- `canvas.en` - 业务画布（英文版）
+- `pricing.en` - 定价指导（英文版）
+- `review.en` - 决策诊断（英文版）
+- `launch.en` - 72小时启动（英文版）
+- `diagnosis.en` - 问题诊断（英文版）
+- `tools.en` - 工具推荐（英文版）
+- `cases.en` - 案例查询（英文版）
+- `fetch.en` - 最新资讯（英文版）
+- `code.en` - 代码开发（英文版）
+- `iterate.en` - 迭代优化（英文版）
+- `all.en` - 全家桶（英文版）
+- `quick.en` - 快捷命令（英文版）
+- `policy.en` - 政策信息收集（英文版）
+- `run` - 一键调用所有能力

@@ -67,7 +67,7 @@ POLICY_KEYWORDS = {
 }
 
 # 用户代理（遵守robots.txt）
-USER_AGENT = "HermesAgent/1.0 (OPC Startup Policy Collector; contact: hermes-agent@noreply.github.com)"
+USER_AGENT = "OPCAgent/1.0 (OPC Startup Policy Collector; contact: opc-startup@noreply.github.com)"
 
 def log(msg: str):
     """日志记录"""
